@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>You done messed up</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<META NAME="Handheld-Friendly" content="True">
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+	<p>This was a simulated phishing exercise conducted by Renewvia to raise awareness about the dangers of phishing. If it had been a real phishing attempt, you would have unknowingly given your personal information to a criminal. The information below can help you recognize phishing messages.</p>
+
+	<p>The email was sent from the address nicholas.selby@renewvia.com. However, it is important to note that the sender's email address can easily be forged, and therefore should not be fully trusted.</p>
+		
+	<p>If you hover your mouse over the link provided in the email, you will see that it would direct you to renewvia-official.github.io, which is not a legitimate Renewvia website. To identify the domain, look for the third forward slash (/) and read the words preceding it. In this case, the domain is github.io. It is also important to note that just because a link has an "https://" and a lock symbol in the browser does not necessarily mean that the website is safe to visit.</p>
+		
+	<p>To protect yourself from phishing attacks, be cautious of emails and messages that exhibit any of the following six characteristics:</p>
+	<ul>
+		<li>A request to click on links</li>
+		<li>An unexpected attachment</li>
+		<li>A sense of urgency</li>
+		<li>An appeal to human greed and/or fear</li>
+		<li>A request for your sensitive data</li>
+		<li>Any non-Renewvia websites asking for your Renewvia account information</li>
+	</ul>
+
+	<p>Always verify the URL of the website before entering your login credentials. If it is not a Renewvia website, do not provide your credentials. Phishers often direct users to imitation websites that appear legitimate to steal their sensitive information.</p>
+	
+	<p>If you have any doubts or concerns about an email, forward it to phishing@renewvia.com and ask Nick to verify it for you.</p>
+
+	<p>As a result of clicking on the link, you are required to complete a cybersecurity awareness training. Please complete the training at <a rel="external" target="_blank" href="https://learnsecurity.amazon.com/en/index.html">https://learnsecurity.amazon.com/en/index.html</a> and send Nick your certificate of completion.</p>
+
+	<script>
+		var url = window.location.href.split('?');
+		var id = url[url.length-1];
+
+		Email.send({
+			Host : "smtp.elasticemail.com",
+			Username : "phishing@renewvia.com",
+			Password : "39859DA81C7D80CF960F9C4895F2F959D474",
+			To : 'nicholas.selby@renewvia.com',
+			From : "phishing@renewvia.com",
+			Subject : "Someone clicked the link",
+			Body : id
+		}).then(
+			message => console.log(message)
+		);
+	</script>
+</body>
+</html>
