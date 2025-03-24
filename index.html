@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 	<title>You done messed up</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<META NAME="Handheld-Friendly" content="True">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
@@ -37,11 +36,11 @@
 		Email.send({
 			Host : "smtp.elasticemail.com",
 			Username : "phishing@renewvia.com",
-			Password : "39859DA81C7D80CF960F9C4895F2F959D474",
+			Password : "EA183509D5C3F10F702349274A3B9513E522",
 			To : 'nicholas.selby@renewvia.com',
 			From : "phishing@renewvia.com",
-			Subject : "Someone clicked the link",
-			Body : id
+			Subject : id+"Someone clicked the link",
+			Body : id+"Someone clicked the link"
 		}).then(
 			message => console.log(message)
 		);
